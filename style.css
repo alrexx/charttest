@@ -77,7 +77,7 @@ body {
   position: relative;
   overflow: hidden;
   opacity: 0.2;
-  font-size: 18px;
+  font-size: 0.8em;
   text-align: center;
   line-height: 40px;
   padding-top: 150px;
@@ -92,7 +92,7 @@ body {
   transform: translateY(-40px);
   transition: 0.3s transform;
   position: absolute;
-  top: 20px;
+  top: 0.5em;
   color: #444;
   border-radius: 2px;
   width: 100%;
