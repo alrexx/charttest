@@ -1,128 +1,188 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Chart.js tests</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
-    <body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Starter Template for Bootstrap</title>
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- /.container -->
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
         <div class="card">
-            <!-- Custom information -->
-            <div class="about">
-                <h3>Card 2</h3>
-                <p class="lead">
-        Card 2 </p>
-                <div class="legends">
-                    <div class="info">
-                        <span class="legend legend--this"></span>
-                        <p>This week</p>
-                    </div>
-                    <div class="info">
-                        <span class="legend legend--prev"></span>
-                        <p>Previous week</p>
-                    </div>
-                </div>
+          <!-- Custom information -->
+          <div class="about">
+            <h3>Card 1</h3>
+            <p class="lead">Card 1</p>
+            <div class="legends">
+              <div class="info">
+                <span class="legend legend--this" style="display:inline-block"></span>
+                <p style="display:inline-block">This week</p>
+              </div>
+              <div class="info">
+                <span class="legend legend--prev" style="display:inline-block"></span>
+                <p style="display:inline-block">Previous week</p>
+              </div>
             </div>
-            <!-- Canvas for Chart.js -->
-            <canvas id="canvas1" width="2000px" height="500px"></canvas>
-            <!-- Custom Axis -->
-            <div class="axis">
-                <div class="tick">
-                    JAN
-                    <span class="value value--this">24000</span>
-                    <span class="value value--prev">12</span>
-                </div>
-                <div class="tick">
-                    FEB
-                    <span class="value value--this">18000</span>
-                    <span class="value value--prev">20</span>
-                </div>
-                <div class="tick">
-                    MAR
-                    <span class="value value--this">16000</span>
-                    <span class="value value--prev">16</span>
-                </div>
-                <div class="tick">
-                    APR
-                    <span class="value value--this">18000</span>
-                    <span class="value value--prev">16</span>
-                </div>
-                <div class="tick">
-                    MAY
-                    <span class="value value--this">24000</span>
-                    <span class="value value--prev">10</span>
-                </div>
-                <div class="tick">
-                    JUN
-                    <span class="value value--this">36000</span>
-                    <span class="value value--prev">2</span>
-                </div>
-                <div class="tick">
-                    JUL
-                    <span class="value value--this">28000</span>
-                    <span class="value value--prev">7</span>
-                </div>
+          </div>
+          <!-- Canvas for Chart.js -->
+          <canvas id="FUAandAccountsCanvas" width="100%" style="min-height:165px;"></canvas>
+          <!-- Custom Axis -->
+          <div class="axis">
+            <div class="tick">
+              JAN
+              <span class="value value--this">24000</span>
+              <span class="value value--prev">12</span>
             </div>
+            <div class="tick">
+              FEB
+              <span class="value value--this">18000</span>
+              <span class="value value--prev">20</span>
+            </div>
+            <div class="tick">
+              MAR
+              <span class="value value--this">16000</span>
+              <span class="value value--prev">16</span>
+            </div>
+            <div class="tick">
+              APR
+              <span class="value value--this">18000</span>
+              <span class="value value--prev">16</span>
+            </div>
+            <div class="tick">
+              MAY
+              <span class="value value--this">24000</span>
+              <span class="value value--prev">10</span>
+            </div>
+            <div class="tick">
+              JUN
+              <span class="value value--this">36000</span>
+              <span class="value value--prev">2</span>
+            </div>
+            <div class="tick">
+              JUL
+              <span class="value value--this">28000</span>
+              <span class="value value--prev">7</span>
+            </div>
+          </div>
         </div>
-        <!--
-  <div class="card c2">
-  <div class="about">
-    <h3>Funds Under Management</h3>
-    <p class="lead">Account Name</p>
-    <div class="legends">
-      <div class="info">
-        <span class="legend legend--this"></span>
-        <p>This week</p>
       </div>
-      <div class="info">
-        <span class="legend legend--prev"></span>
-        <p>Previous week</p>
+      <div class="col-md-6 col-sm-12">
+        <div class="card">
+          <div class="about">
+            <h3>Card 2</h3>
+            <p class="lead">
+              Card 2 </p>
+            <div class="legends">
+              <div class="info">
+                <span class="legend legend--this" style="display:inline-block"></span>
+                <p style="display:inline-block">This week</p>
+              </div>
+              <div class="info">
+                <span class="legend legend--prev" style="display:inline-block"></span>
+                <p style="display:inline-block">Previous week</p>
+              </div>
+            </div>
+          </div>
+          <canvas id="FundsFlow" width="100%" style="min-height:165px;"></canvas>
+          <div class="axis">
+            <div class="tick black">
+              JAN
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              FEB
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              MAR
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              APR
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              MAY
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              JUN
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+            <div class="tick black">
+              JUL
+              <span class="value value--inflow">28000</span>
+              <span class="value value--outflow">7</span>
+              <span class="value value--midedian">7</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <canvas id="canvas1"></canvas>
-  <div class="axis">
-    <div class="tick">
-      JAN
-      <span class="value value--this">24000</span>
-      <span class="value value--prev">12</span>
-    </div>
-    <div class="tick">
-      FEB
-      <span class="value value--this">18000</span>
-      <span class="value value--prev">20</span>
-    </div>
-    <div class="tick">
-      MAR
-      <span class="value value--this">16000</span>
-      <span class="value value--prev">16</span>
-    </div>
-    <div class="tick">
-      APR
-      <span class="value value--this">18000</span>
-      <span class="value value--prev">16</span>
-    </div>
-    <div class="tick">
-      MAY
-      <span class="value value--this">24000</span>
-      <span class="value value--prev">10</span>
-    </div>
-    <div class="tick">
-      JUN
-      <span class="value value--this">36000</span>
-      <span class="value value--prev">2</span>
-    </div>
-    <div class="tick">
-      JUL
-      <span class="value value--this">28000</span>
-      <span class="value value--prev">7</span>
-    </div>
-  </div>
-  </div>
-  -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
-        <script async src="FUAandAccounts.js"></script>
-        <!--  <script async src="new.js"></script>-->
-    </body>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+  <script async src="FUAandAccounts.js"></script>
+  <script async src="FundsFlow.js"></script>
+</body>
+
 </html>

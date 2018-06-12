@@ -64,7 +64,7 @@ body {
 
 .axis {
   position: absolute;
-  color: #fff;
+  color: #FFFFFF;
   z-index: 1;
   text-transform: uppercase;
   display: flex;
@@ -83,6 +83,10 @@ body {
   padding-top: 150px;
 }
 
+.axis .tick.black{
+  color:black;
+  opacity:0.4;
+}
 .axis .tick:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.2);
@@ -107,4 +111,14 @@ body {
 .value.value--this {
   color: #5555FF;
   font-weight: bold;
+}
+
+.value.value--inflow{
+
+}
+.value.value--outflow{
+
+}
+.value.value--midedian{
+
 }

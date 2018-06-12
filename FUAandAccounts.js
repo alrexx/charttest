@@ -1,4 +1,4 @@
-var canvas = document.getElementById( "canvas1" );
+var canvas = document.getElementById( "FUAandAccountsCanvas" );
 
 // Apply multiply blend when drawing datasets
 var multiply = {
@@ -49,6 +49,7 @@ var config = {
   type: 'line',
   data: chartdata,
   options: {
+    maintainAspectRatio: true,
     layout: {
       margin: {
         top: 5,
