@@ -10,10 +10,12 @@
   <title>Starter Template for Bootstrap</title>
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
+  <!-- Custom styles for FFIN template -->
   <link href="starter-template.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <link href="smallcard3.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 <body>
@@ -48,131 +50,104 @@
       </form>
     </div>
   </nav>
-  <!-- /.container -->
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div class="card">
-          <!-- Custom information -->
-          <div class="about">
-            <h3>Card 1</h3>
-            <p class="lead">Card 1</p>
-            <div class="legends">
-              <div class="info">
-                <span class="legend legend--this" style="display:inline-block"></span>
-                <p style="display:inline-block">This week</p>
+    <div class="row  align-items-stretch">
+      <div class="col-lg-3 col-md-6 col-md-12">
+        <div class="card smallcard">
+          <div class="card-body">
+            <div class="card-title">
+              Accounts
+            </div>
+            <div class="content">
+              <div class="left">
+                <span id="num_accs">123</span>
+                <div class="accounts">
+                  Accounts
+                </div>
+                <span id="e_apps">234</span>
+                <div class="in_prog_accounts">
+                  eApplications in progress
+                </div>
               </div>
-              <div class="info">
-                <span class="legend legend--prev" style="display:inline-block"></span>
-                <p style="display:inline-block">Previous week</p>
+              <div class="right line">
+                <!-- TODO: need to include a no-script version/icon here -->
+                <canvas id="mini_accounts" width="50"></canvas>
               </div>
-            </div>
-          </div>
-          <!-- Canvas for Chart.js -->
-          <canvas id="FUAandAccountsCanvas" width="100%" style="min-height:165px;"></canvas>
-          <!-- Custom Axis -->
-          <div class="axis">
-            <div class="tick">
-              JAN
-              <span class="value value--this">24000</span>
-              <span class="value value--prev">12</span>
-            </div>
-            <div class="tick">
-              FEB
-              <span class="value value--this">18000</span>
-              <span class="value value--prev">20</span>
-            </div>
-            <div class="tick">
-              MAR
-              <span class="value value--this">16000</span>
-              <span class="value value--prev">16</span>
-            </div>
-            <div class="tick">
-              APR
-              <span class="value value--this">18000</span>
-              <span class="value value--prev">16</span>
-            </div>
-            <div class="tick">
-              MAY
-              <span class="value value--this">24000</span>
-              <span class="value value--prev">10</span>
-            </div>
-            <div class="tick">
-              JUN
-              <span class="value value--this">36000</span>
-              <span class="value value--prev">2</span>
-            </div>
-            <div class="tick">
-              JUL
-              <span class="value value--this">28000</span>
-              <span class="value value--prev">7</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="card">
-          <div class="about">
-            <h3>Card 2</h3>
-            <p class="lead">
-              Card 2 </p>
-            <div class="legends">
-              <div class="info">
-                <span class="legend legend--this" style="display:inline-block"></span>
-                <p style="display:inline-block">This week</p>
+      <!-- another column -->
+      <div class="col-lg-3 col-md-6 col-md-12">
+        <div class="card smallcard">
+          <div class="card-body">
+            <div class="card-title">
+              Total FUA
+            </div>
+            <div class="content">
+              <div class="left">
+                <span id="FUA">123</span> Accounts
               </div>
-              <div class="info">
-                <span class="legend legend--prev" style="display:inline-block"></span>
-                <p style="display:inline-block">Previous week</p>
+              <div class="right area">
+                <!-- TODO: need to include a no-script version/icon here -->
+                <canvas id="mini_FUA"></canvas>
               </div>
+
+            </div>
+            <div class="card_disclaimer">
+              as at 01/01/1970
             </div>
           </div>
-          <canvas id="FundsFlow" width="100%" style="min-height:165px;"></canvas>
-          <div class="axis">
-            <div class="tick black">
-              JAN
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
+        </div>
+      </div>
+      <!-- another column -->
+      <div class="col-lg-3 col-md-6 col-md-12">
+        <div class="card smallcard">
+          <div class="card-body">
+            <div class="card-title">
+              Cash Forecast
             </div>
-            <div class="tick black">
-              FEB
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
+            <div class="content">
+              <div class="left">
+                <div class="MovementsIn">
+                  <i class="far fa-arrow-alt-circle-up green"></i>
+                  <span id="forecast_in">$6543.21</span>
+                </div>
+                <div class="Movements">
+                  <i class="far fa-arrow-alt-circle-down red"></i>
+                  <span id="forcast_out">$1234.56</span>
+                </div>
+              </div>
+
+              <div class="bar right">
+                <!-- TODO: need to include a no-script version/icon here -->
+                <canvas id="mini_cashmovements"></canvas>
+              </div>
             </div>
-            <div class="tick black">
-              MAR
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
+            <div class="card_disclaimer">
+              as at 01/01/1970
             </div>
-            <div class="tick black">
-              APR
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
+          </div>
+        </div>
+      </div>
+      <!-- another column -->
+      <div class="col-lg-3 col-md-6 col-md-12">
+        <div class="card smallcard">
+          <div class="card-body">
+            <div class="card-title">
+              Advice
             </div>
-            <div class="tick black">
-              MAY
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
-            </div>
-            <div class="tick black">
-              JUN
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
-            </div>
-            <div class="tick black">
-              JUL
-              <span class="value value--inflow">28000</span>
-              <span class="value value--outflow">7</span>
-              <span class="value value--midedian">7</span>
+            <div class="content">
+              <div class="left">
+                <div class="Advice_Due">
+                </div>
+                <div class="Advice_label">
+                </div>
+              </div>
+              <div class="pie right">
+                <!-- TODO: need to include a no-script version/icon here -->
+                <canvas id="mini_advicepie"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -180,9 +155,18 @@
     </div>
   </div>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
-  <script async src="FUAandAccounts.js"></script>
-  <script async src="FundsFlow.js"></script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js "></script>
+  <script async src="mini-line-account.js "></script>
+  <script async src="mini-pie-advise.js "></script>
+  <script async src="mini-line-FUA.js "></script>
+  <script async src="mini-bar-cashmovements.js "></script>
+  <!--
+  <script async src="FUAandAccounts.js "></script>
+  <script async src="FundsFlow.js "></script>
+-->
 </body>
 
 </html>

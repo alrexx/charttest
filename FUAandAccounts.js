@@ -12,8 +12,8 @@ var multiply = {
 
 // Gradient color - this week
 var gradientThisWeek = canvas.getContext( '2d' ).createLinearGradient( 0, 0, 0, 150 );
-gradientThisWeek.addColorStop( 0, '#2c2fe0' );
-gradientThisWeek.addColorStop( 1, '#7088d1' );
+gradientThisWeek.addColorStop( 0, '#233760' );
+gradientThisWeek.addColorStop( 1, '#4b6cb7' );
 
 // Gradient color - previous week
 var gradientPrevWeek = canvas.getContext( '2d' ).createLinearGradient( 0, 0, 0, 150 );
@@ -25,7 +25,7 @@ var chartdata = {
   datasets: [ {
     type: "line",
     label: "This week",
-    data: [ 24000, 18000, 16000, 18000, 24000, 36000, 28000 ],
+    data: [ 1000, 0, 16000, 18000, 24000, 36000, 28000 ],
     backgroundColor: gradientThisWeek,
     pointBackgroundColor: '#FFFFFF',
     pointBorderColor: '#FFFFFF',
@@ -35,13 +35,14 @@ var chartdata = {
     type: "line",
     borderDash: ( [ 15, 5 ] ),
     label: 'Previous week',
-    data: [ 12, 20, 16, 16, 10, 2, 7 ],
+    data: [ 12, 18, 16, 20, 10, 2, 7 ],
     backgroundColor: '#FFF',
     borderColor: '#cc2828',
     pointBackgroundColor: '#FFFFFF',
     pointBorderColor: '#FFFFFF',
     lineTension: 0.2,
     yAxisID: "y-axis-1",
+    fill: false,
     } ]
 };
 

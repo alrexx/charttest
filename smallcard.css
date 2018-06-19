@@ -1,0 +1,111 @@
+/* smallcard.css
+small card stylesheet
+*/
+.smallcard{
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  height:120px;
+}
+
+.smallcard.blue{
+  background: #74ebd5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400%;
+  animation: bg 35s infinite;
+}
+.smallcard.green{
+  background: #1D976C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400%;
+  animation: bg 25s infinite;
+}
+.smallcard.yellow{
+  background: #CAC531;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+}
+.smallcard.purple{
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+}
+
+.smallcard .cardtitle{
+  padding:8px 10px;
+  color: #666;
+  /* color: #8b8b8b; */
+  font-size: 0.7em;
+  font-weight:900;
+}
+
+.smallcard .icon{
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.smallcard .value {
+  font-weight: 900;
+  font-size: 2em;
+  color: #686868;
+}
+.smallcard .change{
+  text-align:right;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.smallcard .change.down{
+  color: #DB6A6A;
+}
+.smallcard .change.up{
+  color: green;
+}
+.smallcard .iconholder{
+  display:inline-block;
+}
+.smallcard .content{
+  margin:10px;
+
+}
+.smallcard .figures {
+  float:right;
+  width:auto;
+}
+
+.smallcard .split{
+  height:100%;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+}
+.smallcard .split .left{
+  margin:auto;
+  height:100%;
+  width:50%;
+  display:block;
+  float:left;
+  border-right: 1px solid #ccc;
+}
+.smallcard .split .right{
+  margin:auto;
+  height:100%;
+  width:50%;
+  display:block;
+  float:right;
+
+}
+.smallcard .split  .value{
+  font-size: 4em;
+  font-weight: 300;
+}
+.smallcard .label{
+  color: #646464;
+  font-weight: 400;
+  font-size: 0.9em;
+}

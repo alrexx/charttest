@@ -1,0 +1,189 @@
+body {
+  background-color: #blue;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  background: linear-gradient(-45deg, blue, red);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 375px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* hide limit values on X axis */
+.card #canvas {
+width: 100%;
+}
+
+.card .about {
+  height: 185px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card .about h3,
+.card .about .lead {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.card .about h3 {
+  font-size: 24px;
+  color: #fff;
+}
+
+.card .about .lead {
+  color: #eee;
+}
+
+.card .info {
+  float: left;
+  padding: 10px 30px 10px 0;
+}
+
+.card .info p {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.legends {
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.legend {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.legend--this {
+  background-color: #5555FF;
+}
+
+.legend--prev {
+  background-color: #FF55B8;
+}
+
+.axis {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+}
+
+.axis .tick {
+  flex: 1;
+  position: relative;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+.axis .tick::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.axis .tick .value {
+  transform: translateY(-240px);
+  opacity: 0;
+  transition: all 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: #fff;
+  border-radius: 2px;
+  width: 100%;
+  line-height: 20px;
+}
+
+.axis .tick:hover .value.value--this {
+  transform: translateY(-180px);
+  display: block;
+  opacity: 0.4;
+}
+
+.value.value--this {
+  color: #fff;
+  font-weight: bold;
+}
+.axis .tick:hover .value.value--that {
+  transform: translateY(-25px);
+  display: block;
+  opacity: 0.4;
+}
+.value.value--that{
+  color: #fff;
+  font-weight: bold;
+}
+
+.day-number {
+  display: block;
+}
+
+.day-name {
+  display: block;
+  opacity: 0.4;
+}
+
+/* Animated background, credits: Manuel Pinto, https://codepen.io/P1N2O/pen/pyBNzX */
+.card.fullcol {
+background: #7474BF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+}
+
+.selected{
+  width:90%;
+  margin:auto;
+  top:-100px;
+}
+.selected span {
+  color:white;
+  padding:10px;
+  font-weight:300;
+
+}
+
+@keyframes bg
+{
+  0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

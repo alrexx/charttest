@@ -1,5 +1,17 @@
 var canvas = document.getElementById( "FundsFlow" );
 
+// Apply multiply blend when drawing datasets
+var multiply = {
+  beforeDatasetsDraw: function ( chart, options, el ) {
+    chart.ctx.globalCompositeOperation = 'multiply';
+  },
+  afterDatasetsDraw: function ( chart, options ) {
+    chart.ctx.globalCompositeOperation = 'source-over';
+  },
+};
+
+
+
 var config = {
   type: 'bar',
   data: {
@@ -24,7 +36,7 @@ var config = {
         ]
   },
   options: {
-    responsive: true,
+    responsive: false,
     elements: {
       point: {
         radius: 6,
@@ -52,20 +64,19 @@ var config = {
         } ]
     }
   },
+  plugins: [ multiply ],
 };
+
 window.myBar = new Chart( canvas, config );
 document.getElementById( "FundsFlow" ).onclick = function ( evt ) {
-  try {
-    var activePoints = myBar.getElementsAtEvent( evt );
-    var firstPoint = activePoints[ 0 ];
-    var secondPoint = activePoints[ 1 ];
-    var label = myBar.data.labels[ firstPoint._index ];
-    var inflow = myBar.data.datasets[ firstPoint._datasetIndex ].data[ firstPoint._index ];
-    var outflow = myBar.data.datasets[ secondPoint._datasetIndex ].data[ secondPoint._index ];
-    document.getElementById( "Month" ).innerText = label;
-    document.getElementById( "In" ).innerText = "$" + inflow;
-    document.getElementById( "Out" ).innerText = "-$" + ( outflow * -1 );
-  } catch ( e ) {
-    console.log( "no point selected" );
-  }
+  var activePoints = myBar.getElementsAtEvent( evt );
+  var firstPoint = activePoints[ 0 ];
+  var secondPoint = activePoints[ 1 ];
+  var label = myBar.data.labels[ firstPoint._index ];
+  var inflow = myBar.data.datasets[ firstPoint._datasetIndex ].data[ firstPoint._index ];
+  var outflow = myBar.data.datasets[ secondPoint._datasetIndex ].data[ secondPoint._index ];
+  //alert(label + ": " + value + value2);
+  document.getElementById( "Month" ).innerText = label;
+  document.getElementById( "In" ).innerText = "$" + inflow;
+  document.getElementById( "Out" ).innerText = "-$" + ( outflow * -1 );
 };

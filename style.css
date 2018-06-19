@@ -1,24 +1,37 @@
 body {
-  background-color: #f3f5f7;
+  background-color: #CCC;
   font-family: 'Raleway', Arial, sans-serif;
 }
-.card {
-  background-color: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+.card_large {
+  background-color: #FFF;
   height: 375px;
   border-radius: 10px;
   overflow: hidden;
 }
 
+.card canvas {
+  width: 100%;
+  min-height: 210px;
+}
+
+#FundsFlow {
+  margin-bottom: 25px;
+}
+
 .card .about {
-  height: 225px;
+  height: 170px;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.card .about h3,
-.card .about .lead {
-  font-weight: 300;
+.card .about h3, .card .about .lead {
   margin: 0;
+  font-weight: 400;
 }
 
 .card .about h3 {
@@ -54,12 +67,30 @@ body {
   border-radius: 50%;
 }
 
+.legend--FUA {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #233760;
+  margin-right: 2px;
+}
+
+.legend--ACC {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #cc2828;
+  margin-right: 2px;
+}
+
 .legend--this {
-  background-color: #5555FF;
+  background-color: #233760;
 }
 
 .legend--prev {
-  background-color: #FF55B8;
+  background-color: #cc2828;
 }
 
 .axis {
@@ -70,55 +101,160 @@ body {
   display: flex;
   width: 100%;
   bottom: 0;
+
 }
 
 .axis .tick {
   flex: 1;
   position: relative;
   overflow: hidden;
-  opacity: 0.2;
+  /* this hides the ticks when they are not being displayed */
+  opacity: 0.4;
   font-size: 0.8em;
   text-align: center;
-  line-height: 40px;
-  padding-top: 150px;
+  line-height: 30px;
+  padding-bottom: 10px;
+  padding-top: 50%;
 }
 
-.axis .tick.black{
-  color:black;
-  opacity:0.4;
+.FundsFlow .axis .tick {
+  padding-top: 10px;
+  opacity: 0.6;
+  overflow: visible;
 }
-.axis .tick:hover {
+
+.FundsFlow .axis .tick::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.FUA .axis .tick:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .axis .tick .value {
-  transform: translateY(-40px);
-  transition: 0.3s transform;
-  position: absolute;
-  top: 0.5em;
-  color: #444;
+  transition: all 0.3s;
   border-radius: 2px;
   width: 100%;
-  line-height: 20px;
+  line-height: 30px;
+  color: #444;
+  position: absolute;
 }
 
-.axis .tick:hover .value.value--this {
-  transform: translateY(0);
+.FUA .axis .tick .value {
+  transform: translateY(-40px);
+  top: 20px;
+  opacity: 0;
+}
+
+.FundsFlow .axis .tick .value {
+  transform: translateY(-200px);
+  opacity: 0;
+  top: 20px;
+  left: 0;
+}
+
+/*
+.FundsFlow .axis .tick .value {
+  transform: translateY(-240px);
+}
+*/
+
+.axis .tick:hover .value.value--FUM {
+  transform: translateY(-25px);
   display: block;
+  opacity: 1;
+  color: black;
+  font-weight: 700;
 }
 
-.value.value--this {
-  color: #5555FF;
+.axis .tick:hover .value.value--ACC {
+  transform: translateY(-5px);
+  display: block;
+  opacity: 1;
+  color: black;
+  font-weight: 700;
+}
+
+/*
+.axis .tick:hover .value.value--FFIN {
+  transform: translateY(-200px);
+  display: block;
+  opacity:0.5;
+}
+
+.value.value--FFIN {
+  color: #fff;
   font-weight: bold;
 }
 
-.value.value--inflow{
-
+.axis .tick:hover .value.value--FFOUT {
+  transform: translateY(-25px);
+  display: block;
+  opacity:0.5;
 }
-.value.value--outflow{
 
+.value.value--FFOUT {
+  color: #fff;
+  font-weight: bold;
 }
-.value.value--midedian{
+*/
 
+/* Animated background, credits: Manuel Pinto, https://codepen.io/P1N2O/pen/pyBNzX */
+
+.card.FundsFlow {
+  background: #4b6cb7;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #233760, #4b6cb7);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #233760, #4b6cb7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+}
+
+.selected {
+  width: 90%;
+  margin: auto;
+  top: -100px;
+}
+
+.selected span {
+  padding: 10px;
+  font-weight: 300;
+}
+
+.white-text {
+  color: #FFF !important;
+}
+.black-text{
+  color: #000 !important;
+  font-weight: 500;
+}
+
+.month-number {
+  display: block;
+}
+
+.month-name {
+  display: block;
+}
+
+@keyframes bg {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
 }
